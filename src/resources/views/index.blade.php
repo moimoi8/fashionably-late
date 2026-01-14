@@ -9,7 +9,7 @@
     <div class="contact-form__heading">
         <h2>Contact</h2>
     </div>
-    <form class="form" action="/confirm" method="post">
+    <form class="form" action="/confirm" method="post" novalidate>
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -19,11 +19,15 @@
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input type="text" name="last_name" placeholder="例:山田" value="{{ old('last_name') }}">
-                    <input type="text" name="first_name" placeholder="例:太郎" value="{{ old('first_name') }}">
+                    <div class="form__error">
+                        @error('last_name') {{ $message }} @enderror
+                    </div>
                 </div>
-                <div class="form__error">
-                    @error('last_name') {{ $message }} @enderror
-                    @error('first_name') {{ $message }} @enderror
+                <div class="form__input--text">
+                    <input type="text" name="first_name" placeholder="例:太郎" value="{{ old('first_name') }}">
+                    <div class="form__error">
+                        @error('first_name') {{ $message }} @enderror
+                    </div>
                 </div>
             </div>
         </div>
@@ -69,21 +73,27 @@
                 <span class="form__label--required">※</span>
             </div>
             <div class="form__group-content">
-                <div class="form__input--text telephone-flex">
-                    <input type="tel" name="tel_1" placeholder="080" value="{{ old('tel_1') }}">
+                <div class="telephone-flex">
+                    <div class="form__input--text">
+                        <input type="tel" name="tel_1" placeholder="080" value="{{ old('tel_1') }}">
+                    </div>
                     <span>-</span>
-                    <input type="tel" name="tel_2" placeholder="1234" value="{{ old('tel_2') }}">
+                    <div class="form__input--text">
+                        <input type="tel" name="tel_2" placeholder="1234" value="{{ old('tel_2') }}">
+                    </div>
                     <span>-</span>
-                    <input type="tel" name="tel_3" placeholder="5678" value="{{ old('tel_3') }}">
+                    <div class="form__input--text">
+                        <input type="tel" name="tel_3" placeholder="5678" value="{{ old('tel_3') }}">
+                    </div>
                 </div>
                 <div class="form__error">
-                    @error('tel_1') {{ $message }} @enderror
-                    @unless($errors->has('tel_1'))
-                    @error('tel_2') {{ $message }} @enderror
-                    @endunless
-                    @unless($errors->has('tel_1') || $errors->has('tel_2'))
-                    @error('tel_3') {{ $message }} @enderror
-                    @endunless
+                    @if ($errors->has('tel_1'))
+                    {{ $errors->first('tel_1') }}
+                    @elseif ($errors->has('tel_2'))
+                    {{ $errors->first('tel_2') }}
+                    @elseif ($errors->has('tel_3'))
+                    {{ $errors->first('tel_3') }}
+                    @endif
                 </div>
             </div>
         </div>
@@ -121,17 +131,17 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--select">
-                    <select name="category_id">
+                    <select name="categry_id">
                         <option value="" selected disabled>選択してください</option>
                         @foreach($categories as $category)
-                        <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
+                        <option value="{{ $category->id }}" {{ old('categry_id') == $category->id ? 'selected' : '' }}>
                             {{ $category->content }}
                         </option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form__error">
-                    @error('category_id') {{ $message }} @enderror
+                    @error('categry_id') {{ $message }} @enderror
                 </div>
             </div>
         </div>
@@ -142,10 +152,10 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--textarea">
-                    <textarea name="content" placeholder="お問い合わせ内容をご記載ください">{{ old('content') }}</textarea>
+                    <textarea name="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                 </div>
                 <div class="form__error">
-                    @error('content') {{ $message }} @enderror
+                    @error('detail') {{ $message }} @enderror
                 </div>
             </div>
         </div>
