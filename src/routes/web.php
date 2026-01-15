@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,24 @@ use App\Http\Controllers\ContactController;
 // return view('welcome');
 // });
 
-Route::get('/', [ContactController::class, 'index']);
+Route::get('/', [ContactController::class, 'index'])->name('index');
 
-Route::post('/confirm', [ContactController::class, 'confirm']);
+Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 
-Route::post('/thanks', [ContactController::class, 'store']);
+Route::post('/thanks', [ContactController::class, 'store'])->name('contact.store');
 
-Route::post('/thanks', [ContactController::class, 'store']);
+Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+Route::get('/search', [AdminController::class, 'search'])->name('admin.search');
+
+Route::get('/reset', [AdminController::class, 'index'])->name('admin.reset');
+
+Route::delete('/delete', [AdminController::class, 'destroy'])->name('admin.delete');
+
+Route::get('/register', [AdminController::class, 'register'])->name('register');
+
+Route::get('/login', [AdminController::class, 'login'])->name('login');
+
+Route::post('/logout', [AdminController::class, 'logout'])->name('logout');
+
+Route::post('/export', [AdminController::class, 'export'])->name('admin.export');

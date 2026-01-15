@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     @yield('css')
 </head>
 
@@ -23,6 +24,22 @@
                 Fashionably Late
             </a>
         </div>
+        <nav class="header_nav">
+            @if(!Route::is('contact.index'))
+            @auth
+            <form method="post" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="logout-button">logout</button>
+            </form>
+            @endauth
+
+            @guest
+            @if(!Route::is('login'))
+            <a href="{{ route('login') }}" class="login-link">login</a>
+            @endif
+            @endguest
+            @endif
+        </nav>
     </header>
 
     <main>

@@ -1,0 +1,176 @@
+/* 全体のレイアウト */
+.admin-form__content {
+    background-color: aqua;
+    width: 80%;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+.admin-form__heading h2 {
+    background-color: #ddd;
+    text-align: center;
+    font-family: 'Inika', serif;
+    color: #8b7969;
+    font-size: 26px;
+    margin-bottom: 40px;
+}
+
+/* 検索ツールバー */
+.admin-toolbar {
+    background-color: aquamarine;
+    margin-bottom: 20px;
+}
+
+.search-form {
+    background-color: bisque;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search-form__item input,
+.search-form__item select {
+    padding: 12px;
+    border: 1px solid #e0d1c3;
+    background-color: #fdfcfb;
+    color: #8b7969;
+}
+
+.search-form__btn--search {
+    background-color: #82756a;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    cursor: pointer;
+}
+
+.search-form__btn--reset {
+    background-color: #e0d1c3;
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+/* エクスポート・ページネーション並び */
+.admin-sub-toolbar {
+    background-color: chartreuse;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+/* テーブルスタイル */
+.admin-table {
+    background-color: darkgoldenrod;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.admin-table__inner {
+    background-color: cornflowerblue;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.admin-table__head {
+    background-color: #8b7969;
+    color: #fff;
+}
+
+.admin-table__header, .admin-table__item {
+    background-color: crimson;
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+/* ホバー機能 (要件FN021) */
+.admin-table__row:hover {
+    background-color: #f9f6f3;
+}
+
+/* 詳細ボタン */
+.detail-btn {
+    background-color: #f4f4f4;
+    color: #8b7969;
+    padding: 5px 15px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.modal-window {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+}
+
+/* ボタンが押された（URLの末尾が #modal-ID になった）時に表示 */
+.modal-window:target {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 40px;
+    width: 600px;
+    position: relative;
+    border-radius: 8px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    text-decoration: none;
+    color: #333;
+}
+
+/* モーダル内のテーブル */
+.modal-table {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.modal-table th {
+    text-align: left;
+    width: 30%;
+    padding: 10px 0;
+}
+
+/* 削除ボタン */
+.delete-btn {
+    display: block;
+    margin: 0 auto;
+    background-color: #c0392b;
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+svg.w-5.h-5 {
+    width: 20px;
+    height: 20px;
+}
+
+nav[role="navigation"] p {
+    display: none;
+}
+
+nav[role="navigation"] .flex.justify-between.flex-1 {
+    display: none;
+}

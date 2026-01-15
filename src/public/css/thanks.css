@@ -10,7 +10,6 @@
 }
 
 .thanks__back {
-    background-color: burlywood;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -25,7 +24,6 @@
 }
 
 .thanks__message {
-    background-color: cornflowerblue;
     position: relative;
     z-index: 2;
     text-align: center;
