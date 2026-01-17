@@ -1,0 +1,71 @@
+/* 全体の背景と中央寄せ */
+.register-form__content {
+    margin: 50px auto;
+    width: 100%;
+    max-width: 600px; /* 白いカードの最大幅 */
+    background-color: #fff;
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 「Register」の見出し */
+.register-form__heading h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #8b7969; /* 少し茶色がかったグレー */
+    margin-bottom: 30px;
+}
+
+/* 入力グループ（縦並び） */
+.form__group {
+    margin-bottom: 25px;
+}
+
+/* ラベル（お名前、メールアドレスなど） */
+.form__group-title {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #8b7969;
+}
+
+/* 入力欄のスタイル */
+.form__input--text input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #f4f4f4; /* 薄いグレーの背景 */
+    border-radius: 2px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* エラーメッセージ（赤色） */
+.form__error {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 5px;
+    min-height: 1em; /* エラーがなくても高さが崩れないように */
+}
+
+/* 登録ボタンのコンテナ（中央寄せ） */
+.form__button {
+    text-align: center;
+    margin-top: 30px;
+}
+
+/* 登録ボタン本体 */
+.form__button-submit {
+    background-color: #8b7969; /* 茶色のボタン */
+    color: #fff;
+    border: none;
+    padding: 10px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.form__button-submit:hover {
+    opacity: 0.8;
+}

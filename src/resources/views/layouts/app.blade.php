@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
     <link rel="stylesheet" href="{{ asset('css/confirm.css') }}">
     <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/register.css') }}">
     @yield('css')
 </head>
 
@@ -34,7 +36,9 @@
             @endauth
 
             @guest
-            @if(!Route::is('login'))
+            @if(Route::is('login'))
+            <a href="{{ route('register') }}" class="register-link">register</a>
+            @else
             <a href="{{ route('login') }}" class="login-link">login</a>
             @endif
             @endguest
