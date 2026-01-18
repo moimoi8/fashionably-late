@@ -25,25 +25,26 @@
             <a class="header__logo" href="/">
                 Fashionably Late
             </a>
-        </div>
-        <nav class="header_nav">
-            @if(!Route::is('contact.index'))
-            @auth
-            <form method="post" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="logout-button">logout</button>
-            </form>
-            @endauth
 
-            @guest
-            @if(Route::is('login'))
-            <a href="{{ route('register') }}" class="register-link">register</a>
-            @else
-            <a href="{{ route('login') }}" class="login-link">login</a>
-            @endif
-            @endguest
-            @endif
-        </nav>
+            <nav class="header__nav">
+                @if(!Route::is('contact.index') &&!Route::is('contact.confirm'))
+                @auth
+                <form method="post" action="{{ route('logout') }}">
+                    @csrf
+                    <button type="submit" class="logout-button">logout</button>
+                </form>
+                @endauth
+
+                @guest
+                @if(Route::is('login'))
+                <a href="{{ route('register') }}" class="register-link">register</a>
+                @else
+                <a href="{{ route('login') }}" class="login-link">login</a>
+                @endif
+                @endguest
+                @endif
+            </nav>
+        </div>
     </header>
 
     <main>

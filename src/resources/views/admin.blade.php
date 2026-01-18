@@ -57,7 +57,7 @@
             </div>
 
             <div class="pagination-wrapper">
-                {{ $contacts->links() }}
+                {{ $contacts->links('pagination::bootstrap-4') }}
             </div>
         </div>
     </div>
@@ -129,12 +129,12 @@
                     <th>お問い合わせの種類</th>
                     <td>{{ $contact->category->content ?? 'なし' }}</td>
                 </tr>
-                <tr>
+                <tr class="modal-table__row--tall">
                     <th>お問い合わせ内容</th>
                     <td>{{ $contact->detail }}</td>
                 </tr>
             </table>
-            <form action="{{ route('admin.delete', ['id' => $contact->id]) }}" method="post" class="delete-form">
+            <form action=" {{ route('admin.delete', ['id' => $contact->id]) }}" method="post" class="delete-form">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="delete-btn">削除</button>

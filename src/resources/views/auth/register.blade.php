@@ -9,7 +9,7 @@
     <div class="register-form__heading">
         <h2>Register</h2>
     </div>
-    <form class="form" action="{{ route('register') }}" method="post">
+    <form class="register-form" action="{{ route('register') }}" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -48,16 +48,6 @@
             <div class="form__group-content">
                 <div class="form__input--text">
                     <input type="password" name="password" placeholder="例:coachtech1106" value="{{ old('password') }}">
-                </div>
-                <div class="form__group">
-                    <div class="form__group-title">
-                        <span class="form__label--text">確認用パスワード</span>
-                    </div>
-                    <div class="form__group-content">
-                        <div class="form__input--text">
-                            <input type="password" name="password_confirmation" placeholder="例:coachtech1106">
-                        </div>
-                    </div>
                 </div>
                 <div class="form__error">
                     @error('password')

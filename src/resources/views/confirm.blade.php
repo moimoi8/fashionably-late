@@ -9,7 +9,7 @@
     <div class="confirm-heading">
         <h2>Confirm</h2>
     </div>
-    <form class="form" action="/thanks" method="post">
+    <form class="confirm-form" action="/thanks" method="post">
         @csrf
         <div class="confirm-table">
             <table class="confirm-table__inner">
@@ -76,7 +76,7 @@
                         <input type="hidden" name="categry_id" value="{{ $contact['categry_id'] }}">
                     </td>
                 </tr>
-                <tr class="confirm-table__row">
+                <tr class="confirm-table__row--content">
                     <th class="confirm-table__header">お問い合わせ内容</th>
                     <td class="confirm-table__text">
                         <span>{{ $contact['detail'] }}</span>
@@ -91,3 +91,4 @@
         </div>
     </form>
 </div>
+@endsection

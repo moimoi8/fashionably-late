@@ -1,65 +1,108 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
+
 .contact-form__content {
     margin: 0 auto;
-    max-width: 1230px;
-    padding: 100px 40px;
+    padding: 20px 15px;
+    max-width: 100%;
+    width: 100%;
+    text-align: center;
 }
 
 .contact-form__heading {
-    background-color: #ee6b69;
+    margin-bottom: 20px;
     text-align: center;
-    margin-bottom: 40px;
 }
 
 .contact-form__heading h2 {
     font-family: 'Inika', serif;
-    font-size: 32px;
     color: #8b7969;
+    font-size: 26px;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    margin: 0;
 }
 
-.form {
-    background-color: aqua;
+.contact-form {
     margin: 0 auto;
-    width: 80%;
+    width: 800px;
+    max-width: 95%;
+    padding: 10px 0;
+    text-align: center;
 }
 
 .form__group {
-    background-color: bisque;
     display: flex;
-    margin-bottom: 30px;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    color: #8b7969;
 }
 
 .form__group-title {
-    background-color: cadetblue;
     width: 30%;
-    padding-top: 10px;
+    min-width: 160px;
+    padding: 10px;
     text-align: left;
-}
-
-.form__label--required {
-    background-color: aliceblue;
-    color: #ee6b69;
+    flex-shrink: 0;
+    font-size: 15px;
+    font-weight: normal !important;
 }
 
 .form__group-content {
-    background-color: coral;
     width: 70%;
+    text-align: left;
 }
 
 .form__input--text input,
+.form__input--textarea textarea,
 .form__input--select select,
-.form__input--textarea textarea {
+.name-flex,
+.telephone-flex {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #e0dfde;
-    border-radius: 3px;
-    background-color: #f4f4f4;
+    max-width: 500px;
     box-sizing: border-box;
 }
 
-.form__input--text {
+input, textarea, select {
+    padding: 8px 15px;
+    border: 1px solid #e0dfde;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    color: #8b7969;
+    font-size: 14px;
+}
+
+.form__input--textarea textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.name-flex {
     display: flex;
     gap: 20px;
 }
+
+.form__input--name {
+    flex: 1;
+}
+
+.form__label--required {
+    margin-left: 5px;
+    padding: 4px 6px;
+    color: #ee6b69;
+}
+
+.form__error {
+    height: 20px;
+    margin-top: 5px;
+    color: #ff0000;
+    text-align: left;
+}
+
 
 .telephone-flex {
     display: flex;
@@ -67,33 +110,34 @@
     gap: 10px;
 }
 
-.form__input--text input {
-    width: 100%;
+.telephone-flex input {
+    flex: 1;
+    text-align: center;
 }
 
-.form__input--textarea textarea {
-    height: 120px;
+.form__input--select select {
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url('data:image/svg+xml;charset=utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%238b7969"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 20px;
 }
 
 .form__button {
-    margin-top: 30px;
+    margin-top: 20px;
     text-align: center;
 }
 
 .form__button-submit {
-    padding: 10px;
-    width: 20%;
-    height: 50px;
-    font-size: 20px;
+    padding: 0 40px;
+    width: auto;
+    min-width: 150px;
+    height: 45px;
+    font-size: 16px;
     border: none;
     border-radius: 3px;
     background: #8b7969;
     color: #fff;
     cursor: pointer;
-}
-
-.form__error {
-    color: #ff0000;
-    font-size: 14px;
-    margin-top: 5px;
 }
