@@ -77,3 +77,5 @@ php artisan migrate --seed
 
 検索結果のCSVエクスポート
 
+## ER図
+![ER図の画像](erd.png)
