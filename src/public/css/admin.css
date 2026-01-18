@@ -157,6 +157,9 @@ body {
 }
 
 .admin-table {
+    border-collapse: collapse;
+    border-left: 1px solid #e0d1c3;
+    border-right: 1px solid #e0d1c3;
     width: 100%;
     margin-top: 10px;
 }
@@ -204,8 +207,6 @@ body {
     padding: 15px;
     text-align: left;
     font-weight: bold;
-    border-left: 1px solid #e0d1c3;
-    border-right: 1px solid #e0d1c3;
 }
 
 .admin-table__item {
@@ -213,8 +214,6 @@ body {
     padding: 15px;
     text-align: left;
     border-bottom: 1px solid #e0d1c3;
-    border-left: 1px solid #e0d1c3;
-    border-right: 1px solid #e0d1c3;
     color: #8b7969;
 }
 
@@ -248,8 +247,10 @@ body {
 .modal-content {
     background: #fff;
     padding: 40px;
-    width: 500px;
+    width: 90%;
+    max-width: 650px;
     position: relative;
+    box-sizing: border-box;
 }
 
 .modal-close {
