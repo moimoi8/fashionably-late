@@ -84,10 +84,16 @@ input, textarea, select {
 .name-flex {
     display: flex;
     gap: 20px;
+    width: 100%;
+    max-width: 500px;
 }
 
 .form__input--name {
     flex: 1;
+}
+
+.form__input--name input {
+    width: 100%;
 }
 
 .form__label--required {
